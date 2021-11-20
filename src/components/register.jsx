@@ -12,7 +12,8 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-
+import { useState } from "react";
+import axios from "axios";
 function Copyright(props) {
   return (
     <Typography
@@ -24,17 +25,35 @@ function Copyright(props) {
   );
 }
 
+const intital = {
+  username: "",
+  email: "",
+  password: "",
+  phoneno: "",
+  adress: "",
+};
+
 const theme = createTheme();
 
 export default function SignUp() {
-  const handleSubmit = (event) => {
+  const [userdata, setUserData] = useState(intital);
+
+  function handleData(e) {
+    const { name, value } = e.target;
+    setUserData({ ...userdata, [name]: value });
+  }
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
+    const res = await axios.post("http://localhost:9090/register", userdata);
+    // const data = new FormData(event.currentTarget);
+
     // eslint-disable-next-line no-console
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+    // console.log({
+    //   email: data.get("email"),
+    //   password: data.get("password"),
+    // });
+    console.log(res.data);
   };
 
   return (
@@ -65,11 +84,12 @@ export default function SignUp() {
               <Grid item xs={12} sm={6}>
                 <TextField
                   autoComplete="given-name"
-                  name="firstName"
+                  name="username"
                   required
                   fullWidth
                   id="firstName"
                   label="First Name"
+                  onChange={(e) => handleData(e)}
                   autoFocus
                 />
               </Grid>
@@ -91,6 +111,29 @@ export default function SignUp() {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
+                  onChange={(e) => handleData(e)}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  id="phoneno"
+                  label="Mobile Number"
+                  name="phoneno"
+                  autoComplete="phoneno"
+                  onChange={(e) => handleData(e)}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  id="address"
+                  label="Address"
+                  name="adress"
+                  autoComplete="address"
+                  onChange={(e) => handleData(e)}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -102,6 +145,7 @@ export default function SignUp() {
                   type="password"
                   id="password"
                   autoComplete="new-password"
+                  onChange={(e) => handleData(e)}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -113,12 +157,13 @@ export default function SignUp() {
                 />
               </Grid>
             </Grid>
+            {/* sigup buttton */}
             <Button
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-              href="/home"
+              // href="/home"
             >
               Sign Up
             </Button>

@@ -1,4 +1,9 @@
 import React from "react";
+
+import { AuthContext } from "../ContextApi/ContextProvider";
+
+import { useContext } from "react";
+
 import { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import { Navigation } from "./navigation";
@@ -14,8 +19,13 @@ import JsonData from "../data/data.json";
 import Login from "./login";
 import Register from "./register";
 import Home from "./home";
+import Ship from "./Ship";
+import Order from "./Order";
 function Routes() {
   const [landingPageData, setLandingPageData] = useState({});
+  // const { currentuser } = useContext(AuthContext);
+  // console.log(currentuser);
+  // const [orderdata, setOrderData] = useState({ currentuser });
   useEffect(() => {
     setLandingPageData(JsonData);
   }, []);
@@ -29,7 +39,7 @@ function Routes() {
           <Contact data={landingPageData.Contact} />
         </Route>
         <Route exact path="/home">
-          <Navigation />
+          {/* <Navigation /> */}
           <Home data={landingPageData.Header} />
           <Services data={landingPageData.Services} />
           <Features data={landingPageData.Features} />
@@ -64,6 +74,13 @@ function Routes() {
         <Route path="/register">
           {" "}
           <Register />
+        </Route>
+        <Route path="/ship">
+          {" "}
+          <Ship />
+        </Route>
+        <Route path="/orders">
+          <Navigation /> <Order />
         </Route>
       </Switch>
     </div>

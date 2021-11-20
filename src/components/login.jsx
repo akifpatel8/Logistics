@@ -12,7 +12,10 @@ import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-
+import { useState, useContext } from "react";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
+import { AuthContext } from "../ContextApi/ContextProvider";
 function Copyright(props) {
   return (
     <Typography
@@ -25,24 +28,54 @@ function Copyright(props) {
 }
 
 const theme = createTheme();
-
+const intital = {
+  email: "",
+  password: "",
+};
 export default function SignInSide() {
-  const handleSubmit = (event) => {
+  const [login, setLogin] = useState(intital);
+  const { token, handleToken } = useContext(AuthContext);
+  const history = useHistory();
+  function handleData(e) {
+    const { name, value } = e.target;
+    setLogin({ ...login, [name]: value });
+  }
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
+    await axios.post("http://localhost:9090/login", login).then(
+      // console.log(res.data)
+      (res) => {
+        console.log(res.data.user.username);
+        handleToken(res.data.token, res.data.user);
+        history.push("/home");
+        // console.log(res.data.token);
+      }
+    );
+    // console.log(token, "something");
+    // const data = new FormData(event.currentTarget);
+
     // eslint-disable-next-line no-console
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+    // console.log({
+    //   email: data.get("email"),
+    //   password: data.get("password"),
+    // });
   };
 
   return (
     <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: "100vh" }}>
         <CssBaseline />
-      
-        <Grid item xs={24} sm={10} md={12} component={Paper} elevation={6} square>
+
+        <Grid
+          item
+          xs={24}
+          sm={10}
+          md={12}
+          component={Paper}
+          elevation={6}
+          square
+        >
           <Box
             sx={{
               my: 8,
@@ -73,6 +106,7 @@ export default function SignInSide() {
                 name="email"
                 autoComplete="email"
                 autoFocus
+                onChange={(e) => handleData(e)}
               />
               <TextField
                 margin="normal"
@@ -83,6 +117,7 @@ export default function SignInSide() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                onChange={(e) => handleData(e)}
               />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
@@ -92,7 +127,9 @@ export default function SignInSide() {
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2 }} href="/home"
+                sx={{ mt: 3, mb: 2 }}
+                onClick={handleSubmit}
+                // href="/home"
               >
                 Sign In
               </Button>
