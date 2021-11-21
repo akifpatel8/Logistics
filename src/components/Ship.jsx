@@ -18,8 +18,8 @@ import { AuthContext } from "../ContextApi/ContextProvider";
 import axios from "axios";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import category from "../data/in.json";
-
-console.log(category);
+import { useHistory } from "react-router-dom";
+// console.log(category);
 const theme = createTheme();
 export default function Ship() {
   //   const [data, setData] = useState(intital);
@@ -32,7 +32,11 @@ export default function Ship() {
   const [to, setTo] = useState("");
   const [phoneno, setPhoneno] = useState("");
   const [price, setPrice] = useState("");
-
+  const [lt, setLt] = useState("");
+  const [lng, setlng] = useState("");
+  const history = useHistory();
+  console.log(lt);
+  console.log(lng);
   //   function handleData(e) {
   //     // if (l === undefined) {
   //     const { name, value } = e.target;
@@ -57,12 +61,23 @@ export default function Ship() {
       { orders: orderId }
     );
     console.log(list_order);
+    history.push("/confirm");
   }
   //   console.log(city);
 
-  // cities start
+  // price
 
-  // cities end
+  function Price(l, n) {
+    let w = 10;
+    let res = Math.floor(Math.abs(n - l)) * w;
+    let s = document.getElementById("price_s");
+    s.innerText = "Price  " + res + "/-";
+  }
+
+  function handleCheck(e) {
+    e.preventDefault();
+    Price(lt, lng);
+  }
 
   return (
     <div
@@ -159,7 +174,10 @@ export default function Ship() {
                       //   defaultValue={category}
                       //   value={category}
 
-                      onChange={(e, v) => setFrom(v.city)}
+                      onChange={(e, v) => {
+                        setFrom(v.city);
+                        setLt(v.lat);
+                      }}
                       renderInput={(params) => (
                         <TextField {...params} label="city" />
                       )}
@@ -217,7 +235,10 @@ export default function Ship() {
                       //   defaultValue={category}
                       //   value={category}
 
-                      onChange={(e, v) => setTo(v.city)}
+                      onChange={(e, v) => {
+                        setTo(v.city);
+                        setlng(v.lng);
+                      }}
                       renderInput={(params) => (
                         <TextField {...params} label="city" />
                       )}
@@ -297,10 +318,17 @@ export default function Ship() {
                     fullWidth
                     variant="contained"
                     sx={{ mt: 2, mb: 2 }}
+                    onClick={handleCheck}
                   >
                     Check Price
                   </Button>
                 </Grid>
+                <div id="price_show">
+                  <h4>
+                    Total Shipping Cost {from} to {to}
+                  </h4>
+                  <h5 id="price_s"></h5>
+                </div>
                 <Grid>
                   <Button
                     type="submit"
@@ -390,4 +418,30 @@ const category1 = [
 //     .catch(function (error) {
 //       console.error(error);
 //     });
+// }
+
+// function distance(lat1, lon1, lat2, lon2, unit) {
+//   if (lat1 == lat2 && lon1 == lon2) {
+//     return 0;
+//   } else {
+//     var radlat1 = (Math.PI * lat1) / 180;
+//     var radlat2 = (Math.PI * lat2) / 180;
+//     var theta = lon1 - lon2;
+//     var radtheta = (Math.PI * theta) / 180;
+//     var dist =
+//       Math.sin(radlat1) * Math.sin(radlat2) +
+//       Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+//     if (dist > 1) {
+//       dist = 1;
+//     }
+//     dist = Math.acos(dist);
+//     dist = dist * 60 * 1.1515;
+//     if (unit == "K") {
+//       dist = dist * 1.609344;
+//     }
+//     if (unit == "N") {
+//       dist = dist * 0.8684;
+//     }
+//     return dist;
+//   }
 // }

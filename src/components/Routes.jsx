@@ -21,6 +21,8 @@ import Register from "./register";
 import Home from "./home";
 import Ship from "./Ship";
 import Order from "./Order";
+import Usernav from "./Usernav";
+import { Popup } from "./submitPopup";
 function Routes() {
   const [landingPageData, setLandingPageData] = useState({});
   // const { currentuser } = useContext(AuthContext);
@@ -77,10 +79,15 @@ function Routes() {
         </Route>
         <Route path="/ship">
           {" "}
+          <Usernav />
           <Ship />
         </Route>
         <Route path="/orders">
-          <Navigation /> <Order />
+          <Usernav />
+          <Order />
+        </Route>
+        <Route path="/confirm">
+          <Popup />
         </Route>
       </Switch>
     </div>

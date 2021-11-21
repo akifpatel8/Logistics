@@ -568,7 +568,29 @@ label {
 #footer Link:hover {
   border-bottom: 2px solid #608dfd;
 }
+#ship {
+  width: 100%;
+  padding: 50px 0;
+}
+#package {
+  width: 100%;
+  /* padding: 20px 0; */
+}
 
+#price_show {
+  font-weight: 600 !important;
+  text-align: center;
+  border: 1px solid rgb(21, 101, 192);
+  background-image: linear-gradient(lightblue, rgb(21, 101, 192));
+  color: white;
+  box-shadow: 1px 1px 8px 1px lightblue;
+}
+#price_show h4 {
+  color: white;
+}
+#price_show h5 {
+  color: white;
+}
 @media (max-width: 768px) {
   #about img {
     margin: 50px 0;

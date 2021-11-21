@@ -68,7 +68,7 @@ const Home = (props) => {
                     style={{
                       width: "40px",
                       height: "40px",
-                      border: "1px solid black",
+                      // border: "1px solid black",
                     }}
                   />
                   <p>{curser.username}</p>
