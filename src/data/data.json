@@ -6,20 +6,20 @@
   "About": {
     "paragraph": "Ideal Bits is India’s premier, dependable expert logistic service provider for many industries. Grow your business for our nationwide network, On Time delivery commitments and real-time tracking facilities.",
     "Why": [
-      "Lorem ipsum dolor",
-      "Tempor incididunt",
-      "Lorem ipsum dolor",
-      "Incididunt ut labore"
+      "Early COD",
+      "Multiple Pickup Location",
+      "Postpaid",
+      "Recommendation Engine"
     ],
     "Why2": [
-      "Aliquip ex ea commodo",
-      "Lorem ipsum dolor",
-      "Exercitation ullamco",
-      "Lorem ipsum dolor"
+      "Email & SMS Notification",
+      "HyperLocal Services",
+      "Self and Scheduled Ship",
+      "Print your labels"
     ]
   },
   "Logo": {
-    "image": "img/ideal_bits_logo.png"
+    "image": "img/ideal_bits_logo1.png"
   },
   "Gallery": [
     {
@@ -70,68 +70,37 @@
   ],
   "Services": [
     {
-      "icon": "fa fa-wordpress",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
-    },
-    {
-      "icon": "fa fa-cart-arrow-down",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
-    },
-    {
-      "icon": "fa fa-cloud-download",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
-    },
-    {
-      "icon": "fa fa-language",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "icon": "fa fa-plane",
+      "name": "ON-DEMAND COURIER SERVICE",
+      "text": "From a small envelope or package to a full vanload, Courier Express is committed to offering superior levels of essential service with the most flexible options for your time-sensitive same-day deliveries."
     },
     {
       "icon": "fa fa-plane",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "name": "Consectetur SCHEDULED SERVICE",
+      "text": "Do you have time-sensitive orders that require scheduled times for pickup and delivery? We can help. No matter how many days a week you need scheduled delivery, we can customize our services to accommodate your needs in the most cost-effective way."
     },
     {
-      "icon": "fa fa-pie-chart",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "icon": "fa fa-plane",
+      "name": "DEDICATED SERVICE",
+      "text": "It is not always possible to know exactly when or where you might need deliveries made. Do you need flexibility in your schedule? We have a solution: Obtain a driver for your exclusive use. Whether to accommodate daily time changes or seasonal increases and decreases in your business, this flexible service option is tailored to suit your specific business needs."
+    },
+    {
+      "icon": "fa fa-plane",
+      "name": "PARCEL DISTRIBUTION SERVICES",
+      "text": "If your challenge is delivering more to consumers faster and more cost-effectively, parcel distribution service is for you.  Courier Express creates scalable solutions for your last-mile essential delivery.  "
+    },
+    {
+      "icon": "fa fa-plane",
+      "name": "ZONE SKIPPING",
+      "text": "Are you looking for ways to get your parcels to your customers faster and more cost effectively?  Courier Express can assist you by consolidating your shipments and moving them closer to the final delivery point."
+    },
+    {
+      "icon": "fa fa-plane",
+      "name": "WAREHOUSING",
+      "text": "Large or small, short term or long term, let Courier Express handle all your essential warehousing needs with the same dependability and standards of excellence that we are known for in all our services. Courier Express’s warehouses are equipped with state-of-the-art surveillance and alarm systems, together with a professionally trained staff."
     }
   ],
-  "Testimonials": [
-    {
-      "img": "img/testimonials/01.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "John Doe"
-    },
-    {
-      "img": "img/testimonials/02.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "Johnathan Doe"
-    },
-    {
-      "img": "img/testimonials/03.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "John Doe"
-    },
-    {
-      "img": "img/testimonials/04.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "Johnathan Doe"
-    },
-    {
-      "img": "img/testimonials/05.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "John Doe"
-    },
-    {
-      "img": "img/testimonials/06.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "Johnathan Doe"
-    }
-  ],
+
   "Team": [
     {
       "img": "img/team/01.jpg",
@@ -184,4 +153,5 @@
       "text": "A widespread network across India to cater to growing industries. Branches that function 24 hours collecting & delivering cargo with speed & accuracy."
     }
   ]
+ 
 }

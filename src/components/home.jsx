@@ -24,11 +24,10 @@ const Home = (props) => {
             </button>
             <Link className="navbar-brand page-scroll" to="/">
               <img
-                src="img/ideal_bits_logo.png"
+                src="img/ideal_bits_logo.jpeg"
                 className="logo_image"
                 alt="logo"
               />
-              IDEAL BITS
             </Link>
           </div>
 

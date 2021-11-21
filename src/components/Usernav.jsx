@@ -22,13 +22,12 @@ function Usernav() {
             <span className="icon-bar"></span>{" "}
             <span className="icon-bar"></span>{" "}
           </button>
-          <Link className="navbar-brand page-scroll" to="/">
+          <Link className="navbar-brand page-scroll" to="/home">
             <img
-              src="img/ideal_bits_logo.png"
+              src="img/ideal_bits_logo.jpeg"
               className="logo_image"
               alt="logo"
             />
-            IDEAL BITS
           </Link>
         </div>
 
